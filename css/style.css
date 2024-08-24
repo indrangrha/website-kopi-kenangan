@@ -98,7 +98,7 @@ body {
   transform: scaleY(0);
   transform-origin: top;
   transition: 0.3s;
-  border-radius: 10px;
+  border-radius: 10px !important;
   overflow: hidden;
 }
 
