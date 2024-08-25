@@ -288,6 +288,7 @@ body {
   text-align: center;
   border: 1px solid #666;
   padding: 2rem;
+  border-radius: 5px;
 }
 
 .products .product-icons {
@@ -319,13 +320,14 @@ body {
 
 .products .product-image img {
   height: 25rem;
+  border-radius: 5px;
 }
 
 .products .product-content h3 {
   font-size: 2rem;
 }
 
-.products .product-stars i {
+.products .product-stars {
   font-size: 1.7rem;
   padding: 0.8rem;
   color: var(--primary);
