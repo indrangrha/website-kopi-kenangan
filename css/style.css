@@ -186,21 +186,24 @@ body {
 /* About Section */
 .about,
 .menu,
+.products,
 .contact {
   padding: 8rem 7% 1.4rem;
 }
 
 .about h2,
 .menu h2,
-.contact h2 {
+.contact h2,
+.products h2 {
   text-align: center;
   font-size: 2.6rem;
-  margin-bottom: 3rem;
+  margin-bottom: 1rem;
 }
 
 .about h2 span,
 .menu h2 span,
-.contact h2 span {
+.contact h2 span,
+.products h2 span {
   color: var(--primary);
 }
 
@@ -234,12 +237,9 @@ body {
 }
 
 /* Menu Section */
-.menu h2,
-.contact h2 {
-  margin-bottom: 1rem;
-}
 
 .menu p,
+.products p,
 .contact p {
   text-align: center;
   max-width: 30rem;
@@ -259,7 +259,13 @@ body {
 .menu .row .menu-card {
   text-align: center;
   padding-bottom: 4rem;
+  /* transform: scale(0);
+  transition: transform 1s ease 0.5s; */
 }
+
+/* /* #menu:target .menu-card {
+  /* transform: scale(1) rotate(180deg) rotateX(180deg) rotateY(180deg);
+} */
 
 .menu .row .menu-card img {
   border-radius: 50%;
@@ -270,6 +276,76 @@ body {
   margin-top: 1rem auto 0.5rem;
 }
 
+/* Product Section */
+.products .row {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+  gap: 1.5rem;
+  margin-top: 4rem;
+}
+
+.products .row .product-card {
+  text-align: center;
+  border: 1px solid #666;
+  padding: 2rem;
+}
+
+.products .product-icons {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.products .product-icons a {
+  width: 4rem;
+  height: 4rem;
+  color: #fff;
+  margin: 0.3rem;
+  border: 1px solid #666;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.products .product-icons a:hover {
+  background-color: var(--primary);
+  border: 1px solid var(--primary);
+}
+
+.products .product-image {
+  padding: 1rem 0;
+}
+
+.products .product-image img {
+  height: 25rem;
+}
+
+.products .product-content h3 {
+  font-size: 2rem;
+}
+
+.products .product-stars i {
+  font-size: 1.7rem;
+  padding: 0.8rem;
+  color: var(--primary);
+}
+
+.products .product-stars .star-full {
+  fill: var(--primary);
+  color: var(--primary);
+}
+
+.products .product-price {
+  font-size: 1.3rem;
+  font-weight: bold;
+}
+
+.products .product-price span {
+  text-decoration: line-through;
+  font-weight: lighter;
+  font-size: 1rem;
+}
 /* Contact Section */
 .contact .row {
   display: flex;
@@ -431,6 +507,7 @@ footer .credit a {
   }
 
   .menu p,
+  .products p,
   .contact p {
     font-size: 1.2rem;
   }
