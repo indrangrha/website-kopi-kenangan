@@ -536,7 +536,7 @@ footer .credit a {
 }
 
 .modal-content img {
-  height: 20rem;
+  height: 16rem;
   margin-right: 2rem;
   margin-bottom: 2rem;
 }
@@ -650,8 +650,18 @@ footer .credit a {
     padding-top: 0;
   }
 
+  .modal-container {
+    overflow: auto;
+  }
   .modal-container .modal-content {
     flex-wrap: wrap;
+  }
+
+  .modal-content img {
+    height: 55rem;
+    width: 55rem;
+    object-fit: cover;
+    object-position: center;
   }
 }
 
@@ -659,5 +669,11 @@ footer .credit a {
 @media (max-width: 450px) {
   html {
     font-size: 55%;
+  }
+  .modal-content img {
+    height: 28rem;
+    width: 28rem;
+    object-fit: cover;
+    object-position: center;
   }
 }
