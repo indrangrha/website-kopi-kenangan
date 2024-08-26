@@ -50,15 +50,46 @@ itemDetailButtons.forEach((btn) => {
   };
 });
 
+// itemDetailButtons.forEach(function (btn) {
+//   btn.onclick = function (e) {
+//     itemDetailModal.style.display = "flex";
+//     e.preventDefault();
+//   };
+// });
+
 //Klik tombol close modal
 document.querySelector(".close-icon").onclick = (e) => {
-  itemDetailModal.style.display = "none";
   e.preventDefault();
+
+  const itemDetailModal = document.querySelector("#item-detail-modal");
+  // Tambahkan kelas animasi
+  itemDetailModal.classList.add("modal-closing");
+
+  // Setelah animasi selesai, sembunyikan modal
+  itemDetailModal.addEventListener(
+    "animationend",
+    () => {
+      itemDetailModal.style.display = "none";
+      itemDetailModal.classList.remove("modal-closing");
+    },
+    { once: true }
+  );
 };
 
 //Klik diluar modal
 window.onclick = (e) => {
   if (e.target === itemDetailModal) {
-    itemDetailModal.style.display = "none";
+    const itemDetailModal = document.querySelector("#item-detail-modal");
+    // Tambahkan kelas animasi
+    itemDetailModal.classList.add("modal-closing");
+    // Setelah animasi selesai, sembunyikan modal
+    itemDetailModal.addEventListener(
+      "animationend",
+      (el) => {
+        el.target.style.display = "none";
+        el.target.classList.remove("modal-closing");
+      },
+      { once: true }
+    );
   }
 };
