@@ -131,7 +131,7 @@ body {
   width: 35rem;
   padding: 0 1.5rem;
   color: var(--bg);
-  background-color: var(--primary);
+  background-color: #fff;
   transition: 0.3s;
 }
 
