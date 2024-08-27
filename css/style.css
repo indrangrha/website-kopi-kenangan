@@ -1,5 +1,6 @@
 :root {
-  --primary: #b6895b;
+  /* --primary: #b6895b; */
+  --primary: #d5781b;
   --bg: #010101;
 }
 
@@ -231,7 +232,7 @@ body {
 
 .hero .content p {
   font-size: 1.6rem;
-  margin-top: 1rem;
+  margin-top: 2rem;
   line-height: 1.4;
   font-weight: 100;
   text-shadow: 1px 1px 3px rgba(1, 1, 3, 0.5);
