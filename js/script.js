@@ -68,11 +68,13 @@ document.addEventListener("DOMContentLoaded", () => {
       // Update konten modal sesuai dengan produk yang diklik
       const productCard = button.closest(".product-card");
       const productName = productCard.querySelector("h3").innerText;
+      const productDesc = productCard.querySelector("p").innerText;
       const productImage = productCard.querySelector("img").src;
       const productPrice =
         productCard.querySelector(".product-price").innerText;
 
       modal.querySelector("#modal-product-name").innerText = productName;
+      modal.querySelector("#modal-product-description").innerText = productDesc;
       modal.querySelector("#modal-product-image").src = productImage;
       modal.querySelector("#modal-product-price").innerText = productPrice;
 

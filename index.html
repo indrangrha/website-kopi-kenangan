@@ -142,18 +142,22 @@
         <div class="content">
           <h3>Kenapa memilih kopi kami?</h3>
           <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus
-            expedita cum libero asperiores architecto hic.
+            Kami memilih biji kopi terbaik dari perkebunan terkemuka di dunia,
+            memastikan setiap cangkir menawarkan kualitas dan rasa yang tiada
+            duanya. Proses seleksi yang ketat dan perhatian terhadap detail
+            menjamin pengalaman kopi yang memuaskan dan istimewa.
           </p>
           <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi vel
-            vero sint quisquam earum ab omnis cupiditate doloremque repudiandae
-            illum.
+            Proses pemanggangan kami dilakukan dengan cermat dan presisi,
+            mengeluarkan karakter unik dari setiap biji kopi. Ini menciptakan
+            aroma yang menggugah selera dan rasa yang kompleks, memanjakan
+            setiap tegukan Anda dengan kelezatan yang mendalam.
           </p>
           <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime
-            delectus distinctio, praesentium, mollitia nobis aliquam eos nulla,
-            molestias beatae harum accusamus. Doloremque beatae neque illo.
+            Kopi kami diproses menggunakan metode berkelanjutan dan etis,
+            memastikan setiap langkah mendukung petani lokal dan melestarikan
+            lingkungan. Kami berkomitmen untuk memberikan kopi yang tidak hanya
+            enak, tetapi juga memberikan dampak positif bagi dunia.
           </p>
         </div>
       </div>
@@ -164,8 +168,8 @@
     <section id="menu" class="menu">
       <h2><span>Menu</span> Kami</h2>
       <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime
-        consequatur totam delectus itaque nesciunt
+        Temukan pilihan kopi dan hidangan kami yang menggugah selera, sempurna
+        untuk setiap momen spesial.
       </p>
       <div class="row">
         <div class="menu-card">
@@ -176,17 +180,17 @@
         <div class="menu-card">
           <img src="img/menu/2.jpg" alt="Mocha" class="menu-card-img" />
           <h3 class="menu-card-title">- Moccha Latte -</h3>
-          <p class="menu-card-price">IDR 15K</p>
+          <p class="menu-card-price">IDR 23K</p>
         </div>
         <div class="menu-card">
           <img src="img/menu/3.jpg" alt="Vannila" class="menu-card-img" />
           <h3 class="menu-card-title">- Vannila Latte -</h3>
-          <p class="menu-card-price">IDR 15K</p>
+          <p class="menu-card-price">IDR 23K</p>
         </div>
         <div class="menu-card">
           <img src="img/menu/4.jpg" alt="Niscala" class="menu-card-img" />
           <h3 class="menu-card-title">- Niscala -</h3>
-          <p class="menu-card-price">IDR 15K</p>
+          <p class="menu-card-price">IDR 20K</p>
         </div>
       </div>
     </section>
@@ -196,8 +200,8 @@
     <section class="products" id="products" x-data="products">
       <h2><span>Produk Unggulan</span> Kami</h2>
       <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero adipisci
-        nostrum totam, beatae exercitationem distinctio?
+        Temukan biji kopi premium kami: kualitas tinggi, rasa beragam, dan
+        pengalaman menikmati kopi yang tak tertandingi.
       </p>
 
       <div class="row">
@@ -217,7 +221,7 @@
                   <use href="img/feather-sprite.svg#shopping-cart" />
                 </svg>
               </a>
-              <a href="#" class="item-detail-button">
+              <a href="#" class="item-detail-button" data-product-id="1">
                 <svg
                   width="24"
                   height="24"
@@ -236,6 +240,7 @@
             </div>
             <div class="product-content">
               <h3 x-text="item.name"></h3>
+              <p x-text="item.desc" x-show="false"></p>
               <div class="product-stars">
                 <svg
                   width="24"
