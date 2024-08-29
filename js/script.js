@@ -58,38 +58,62 @@ itemDetailButtons.forEach((btn) => {
 // });
 
 //Klik tombol close modal
-document.querySelector(".close-icon").onclick = (e) => {
-  e.preventDefault();
+document.addEventListener("DOMContentLoaded", () => {
+  const modal = document.getElementById("item-detail-modal");
+  const closeIcon = modal.querySelector(".close-icon");
 
-  const itemDetailModal = document.querySelector("#item-detail-modal");
-  // Tambahkan kelas animasi
-  itemDetailModal.classList.add("modal-closing");
+  document.querySelectorAll(".item-detail-button").forEach((button) => {
+    button.addEventListener("click", (event) => {
+      event.preventDefault();
+      // Update konten modal sesuai dengan produk yang diklik
+      const productCard = button.closest(".product-card");
+      const productName = productCard.querySelector("h3").innerText;
+      const productImage = productCard.querySelector("img").src;
+      const productPrice =
+        productCard.querySelector(".product-price").innerText;
 
-  // Setelah animasi selesai, sembunyikan modal
-  itemDetailModal.addEventListener(
-    "animationend",
-    () => {
-      itemDetailModal.style.display = "none";
-      itemDetailModal.classList.remove("modal-closing");
-    },
-    { once: true }
-  );
-};
+      modal.querySelector("#modal-product-name").innerText = productName;
+      modal.querySelector("#modal-product-image").src = productImage;
+      modal.querySelector("#modal-product-price").innerText = productPrice;
 
-//Klik diluar modal
-window.onclick = (e) => {
-  if (e.target === itemDetailModal) {
+      // modal ditampilkan
+      modal.style.display = "flex";
+    });
+  });
+
+  closeIcon.addEventListener("click", (event) => {
+    event.preventDefault();
     const itemDetailModal = document.querySelector("#item-detail-modal");
     // Tambahkan kelas animasi
     itemDetailModal.classList.add("modal-closing");
+
     // Setelah animasi selesai, sembunyikan modal
     itemDetailModal.addEventListener(
       "animationend",
-      (el) => {
-        el.target.style.display = "none";
-        el.target.classList.remove("modal-closing");
+      () => {
+        itemDetailModal.style.display = "none";
+        itemDetailModal.classList.remove("modal-closing");
       },
       { once: true }
     );
-  }
-};
+  });
+
+  //Klik diluar modal untuk menutup modal
+  window.addEventListener("click", (event) => {
+    if (event.target === modal) {
+      const itemDetailModal = document.querySelector("#item-detail-modal");
+      // Tambahkan kelas animasi
+      itemDetailModal.classList.add("modal-closing");
+
+      // Setelah animasi selesai, sembunyikan modal
+      itemDetailModal.addEventListener(
+        "animationend",
+        () => {
+          itemDetailModal.style.display = "none";
+          itemDetailModal.classList.remove("modal-closing");
+        },
+        { once: true }
+      );
+    }
+  });
+});
