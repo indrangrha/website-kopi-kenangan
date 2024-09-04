@@ -70,8 +70,7 @@ document.addEventListener("DOMContentLoaded", () => {
       const productName = productCard.querySelector("h3").innerText;
       const productDesc = productCard.querySelector("p").innerText;
       const productImage = productCard.querySelector("img").src;
-      const productPrice =
-        productCard.querySelector(".product-price").innerText;
+      const productPrice = productCard.querySelector(".product-price").innerText;
 
       modal.querySelector("#modal-product-name").innerText = productName;
       modal.querySelector("#modal-product-description").innerText = productDesc;
