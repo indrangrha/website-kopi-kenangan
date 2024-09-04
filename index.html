@@ -9,21 +9,16 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <!-- My Font -->
-    <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
-      rel="stylesheet"
-    />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet" />
     <!-- Feather Icons -->
     <script src="https://unpkg.com/feather-icons"></script>
-
+    <!-- AOS -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
     <!-- My Style -->
     <link rel="stylesheet" href="css/style.css" />
 
     <!-- Alpine js -->
-    <script
-      defer
-      src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"
-    ></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
 
     <!-- App -->
     <script src="src/app.js"></script>
@@ -44,11 +39,7 @@
         <a href="#" id="search-button"> <i data-feather="search"></i></a>
         <a href="#" id="shopping-cart-button">
           <i data-feather="shopping-cart"></i>
-          <span
-            class="quantity-badge"
-            x-show="$store.cart.quantity"
-            x-text="$store.cart.quantity"
-          ></span
+          <span class="quantity-badge" x-show="$store.cart.quantity" x-text="$store.cart.quantity"></span
         ></a>
         <a href="#" id="hamburger-menu"> <i data-feather="menu"></i></a>
       </div>
@@ -69,9 +60,7 @@
               <h3 x-text="item.name"></h3>
               <div class="item-price">
                 <span x-text="rupiah(item.price)"></span>&times;
-                <button id="remove" @click="$store.cart.remove(item.id)">
-                  &minus;
-                </button>
+                <button id="remove" @click="$store.cart.remove(item.id)">&minus;</button>
                 <span x-text="item.quantity"></span>
                 <button id="add" @click="$store.cart.add(item)">&plus;</button>
                 &equals;
@@ -80,12 +69,8 @@
             </div>
           </div>
         </template>
-        <h4 x-show="!$store.cart.items.length" style="margin-top: 1rem">
-          Cart is Empty
-        </h4>
-        <h4 x-show="$store.cart.items.length">
-          Total : <span x-text="rupiah($store.cart.total)"></span>
-        </h4>
+        <h4 x-show="!$store.cart.items.length" style="margin-top: 1rem">Cart is Empty</h4>
+        <h4 x-show="$store.cart.items.length">Total : <span x-text="rupiah($store.cart.total)"></span></h4>
 
         <div class="form-container" x-show="$store.cart.items.length">
           <form action="" id="checkoutForm">
@@ -103,14 +88,7 @@
               <input type="number" name="phone" id="phone" autocomplete="off" />
             </label>
 
-            <button
-              class="checkout-button"
-              type="submit"
-              id="checkout-button"
-              value="checkout"
-            >
-              Checkout
-            </button>
+            <button class="checkout-button" type="submit" id="checkout-button" value="checkout">Checkout</button>
           </form>
         </div>
       </div>
@@ -123,9 +101,7 @@
       <div class="mask-container">
         <main class="content">
           <h1>Kopi Nikmat & <span> Cerita Senja</span></h1>
-          <p>
-            Setiap tegukan kopi kami menceritakan keindahan senja yang memukau.
-          </p>
+          <p>Setiap tegukan kopi kami menceritakan keindahan senja yang memukau.</p>
         </main>
       </div>
     </section>
@@ -137,27 +113,21 @@
 
       <div class="row">
         <div class="about-img">
-          <img src="img/tentang-kami.jpg" alt="Tentang Kami" />
+          <img src="img/tentang-kami.jpg" alt="Tentang Kami" data-aos="flip-right" data-aos-offset="300" data-aos-delay="200" />
         </div>
-        <div class="content">
+        <div class="content" data-aos="flip-right" data-aos-offset="300" data-aos-delay="200">
           <h3>Kenapa memilih kopi kami?</h3>
           <p>
-            Kami memilih biji kopi terbaik dari perkebunan terkemuka di dunia,
-            memastikan setiap cangkir menawarkan kualitas dan rasa yang tiada
-            duanya. Proses seleksi yang ketat dan perhatian terhadap detail
-            menjamin pengalaman kopi yang memuaskan dan istimewa.
+            Kami memilih biji kopi terbaik dari perkebunan terkemuka di dunia, memastikan setiap cangkir menawarkan kualitas dan rasa yang tiada duanya. Proses seleksi yang ketat dan perhatian terhadap detail menjamin pengalaman kopi yang
+            memuaskan dan istimewa.
           </p>
           <p>
-            Proses pemanggangan kami dilakukan dengan cermat dan presisi,
-            mengeluarkan karakter unik dari setiap biji kopi. Ini menciptakan
-            aroma yang menggugah selera dan rasa yang kompleks, memanjakan
-            setiap tegukan Anda dengan kelezatan yang mendalam.
+            Proses pemanggangan kami dilakukan dengan cermat dan presisi, mengeluarkan karakter unik dari setiap biji kopi. Ini menciptakan aroma yang menggugah selera dan rasa yang kompleks, memanjakan setiap tegukan Anda dengan kelezatan
+            yang mendalam.
           </p>
           <p>
-            Kopi kami diproses menggunakan metode berkelanjutan dan etis,
-            memastikan setiap langkah mendukung petani lokal dan melestarikan
-            lingkungan. Kami berkomitmen untuk memberikan kopi yang tidak hanya
-            enak, tetapi juga memberikan dampak positif bagi dunia.
+            Kopi kami diproses menggunakan metode berkelanjutan dan etis, memastikan setiap langkah mendukung petani lokal dan melestarikan lingkungan. Kami berkomitmen untuk memberikan kopi yang tidak hanya enak, tetapi juga memberikan
+            dampak positif bagi dunia.
           </p>
         </div>
       </div>
@@ -167,28 +137,25 @@
     <!-- Menu Section Start -->
     <section id="menu" class="menu">
       <h2><span>Menu</span> Kami</h2>
-      <p>
-        Temukan pilihan kopi dan hidangan kami yang menggugah selera, sempurna
-        untuk setiap momen spesial.
-      </p>
+      <p>Temukan pilihan kopi dan hidangan kami yang menggugah selera, sempurna untuk setiap momen spesial.</p>
       <div class="row">
         <div class="menu-card">
-          <img src="img/menu/1.jpg" alt="Espresso" class="menu-card-img" />
+          <img src="img/menu/1.jpg" alt="Espresso" class="menu-card-img" data-aos="flip-down" data-aos-offset="200" data-aos-delay="100" />
           <h3 class="menu-card-title">- Espresso -</h3>
           <p class="menu-card-price">IDR 15K</p>
         </div>
         <div class="menu-card">
-          <img src="img/menu/2.jpg" alt="Mocha" class="menu-card-img" />
+          <img src="img/menu/2.jpg" alt="Mocha" class="menu-card-img" data-aos="flip-down" data-aos-offset="200" data-aos-delay="100" />
           <h3 class="menu-card-title">- Moccha Latte -</h3>
           <p class="menu-card-price">IDR 23K</p>
         </div>
         <div class="menu-card">
-          <img src="img/menu/3.jpg" alt="Vannila" class="menu-card-img" />
+          <img src="img/menu/3.jpg" alt="Vannila" class="menu-card-img" data-aos="flip-down" data-aos-offset="200" data-aos-delay="100" />
           <h3 class="menu-card-title">- Vannila Latte -</h3>
           <p class="menu-card-price">IDR 23K</p>
         </div>
         <div class="menu-card">
-          <img src="img/menu/4.jpg" alt="Niscala" class="menu-card-img" />
+          <img src="img/menu/4.jpg" alt="Niscala" class="menu-card-img" data-aos="flip-down" data-aos-offset="200" data-aos-delay="100" />
           <h3 class="menu-card-title">- Niscala -</h3>
           <p class="menu-card-price">IDR 20K</p>
         </div>
@@ -199,38 +166,19 @@
     <!-- Product Section Start -->
     <section class="products" id="products" x-data="products">
       <h2><span>Produk Unggulan</span> Kami</h2>
-      <p>
-        Temukan biji kopi premium kami: kualitas tinggi, rasa beragam, dan
-        pengalaman menikmati kopi yang tak tertandingi.
-      </p>
+      <p>Temukan biji kopi premium kami: kualitas tinggi, rasa beragam, dan pengalaman menikmati kopi yang tak tertandingi.</p>
 
       <div class="row">
         <template x-for="(item, index) in items" x-key="index">
           <div class="product-card">
             <div class="product-icons">
               <a href="#" @click.prevent="$store.cart.add(item)">
-                <svg
-                  width="24"
-                  height="24"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                >
+                <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                   <use href="img/feather-sprite.svg#shopping-cart" />
                 </svg>
               </a>
               <a href="#" class="item-detail-button" data-product-id="1">
-                <svg
-                  width="24"
-                  height="24"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                >
+                <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                   <use href="img/feather-sprite.svg#eye" />
                 </svg>
               </a>
@@ -242,59 +190,19 @@
               <h3 x-text="item.name"></h3>
               <p x-text="item.desc" x-show="false"></p>
               <div class="product-stars">
-                <svg
-                  width="24"
-                  height="24"
-                  fill="currentColor"
-                  stroke="currentColor"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                >
+                <svg width="24" height="24" fill="currentColor" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                   <use href="img/feather-sprite.svg#star" />
                 </svg>
-                <svg
-                  width="24"
-                  height="24"
-                  fill="currentColor"
-                  stroke="currentColor"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                >
+                <svg width="24" height="24" fill="currentColor" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                   <use href="img/feather-sprite.svg#star" />
                 </svg>
-                <svg
-                  width="24"
-                  height="24"
-                  fill="currentColor"
-                  stroke="currentColor"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                >
+                <svg width="24" height="24" fill="currentColor" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                   <use href="img/feather-sprite.svg#star" />
                 </svg>
-                <svg
-                  width="24"
-                  height="24"
-                  fill="currentColor"
-                  stroke="currentColor"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                >
+                <svg width="24" height="24" fill="currentColor" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                   <use href="img/feather-sprite.svg#star" />
                 </svg>
-                <svg
-                  width="24"
-                  height="24"
-                  fill="currentColor"
-                  stroke="currentColor"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                >
+                <svg width="24" height="24" fill="currentColor" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                   <use href="img/feather-sprite.svg#star" />
                 </svg>
               </div>
@@ -311,10 +219,7 @@
     <!-- Contact Section Start -->
     <section id="contact" class="contact">
       <h2><span>Kontak</span> Kami</h2>
-      <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis,
-        quisquam?
-      </p>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis, quisquam?</p>
 
       <div class="row">
         <iframe
@@ -367,23 +272,14 @@
     <!-- Modal Box Item Detail Start -->
     <div class="modal" id="item-detail-modal">
       <div class="modal-container">
-        <a href="#" class="close-icon" aria-label="Close"
-          ><i data-feather="x"></i
-        ></a>
+        <a href="#" class="close-icon" aria-label="Close"><i data-feather="x"></i></a>
         <div class="modal-content">
-          <img
-            id="modal-product-image"
-            src="img/products/1.jpg"
-            alt="Product 1"
-          />
+          <img id="modal-product-image" src="img/products/1.jpg" alt="Product 1" />
           <div class="product-content">
             <h3 id="modal-product-name">Product 1</h3>
             <div class="modal-product-desc">
               <p id="modal-product-description">
-                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nam,
-                molestias accusantium? Velit, aspernatur. Quos id nobis impedit!
-                Facilis rerum cumque itaque mollitia assumenda doloribus
-                impedit?
+                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nam, molestias accusantium? Velit, aspernatur. Quos id nobis impedit! Facilis rerum cumque itaque mollitia assumenda doloribus impedit?
               </p>
             </div>
             <div class="product-stars">
@@ -393,14 +289,9 @@
               <i data-feather="star" class="star-full"></i>
               <i data-feather="star" class="star-full"></i>
             </div>
-            <div class="product-price" id="modal-product-price">
-              IDR 30K <span>IDR 55K</span>
-            </div>
+            <div class="product-price" id="modal-product-price">IDR 30K <span>IDR 55K</span></div>
             <div class="button-cart">
-              <a href="#" id="add-to-cart"
-                ><i data-feather="shopping-cart"></i>
-                <span>Add to Cart</span></a
-              >
+              <a href="#" id="add-to-cart"><i data-feather="shopping-cart"></i> <span>Add to Cart</span></a>
             </div>
           </div>
         </div>
@@ -412,7 +303,11 @@
     <script>
       feather.replace();
     </script>
-
+    <!-- AOS Script -->
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+      AOS.init();
+    </script>
     <!-- My Script -->
     <script src="js/script.js"></script>
   </body>
