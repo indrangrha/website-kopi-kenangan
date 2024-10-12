@@ -230,18 +230,18 @@
           referrerpolicy="no-referrer-when-downgrade"
         ></iframe>
 
-        <form action="">
+        <form method="POST" id="my-form" action="https://script.google.com/macros/s/AKfycbx_PNzs7ZyWiBDNrfNkb6U6-6xg8jflBLCerL4rijrl0Yi5sYx_-xi6JRLH9hoeYT5dNg/exec">
           <div class="input-group">
             <i data-feather="user"></i>
-            <input type="text" placeholder="nama" />
+            <input type="text" placeholder="nama" name="nama" />
           </div>
           <div class="input-group">
             <i data-feather="mail"></i>
-            <input type="text" placeholder="email" />
+            <input type="text" placeholder="email" name="email" />
           </div>
           <div class="input-group">
             <i data-feather="phone"></i>
-            <input type="text" placeholder="no hp" />
+            <input type="text" placeholder="no hp" name="no_hp" />
           </div>
           <button type="submit" class="btn">Kirim Pesan</button>
         </form>
@@ -299,6 +299,23 @@
     </div>
     <!-- Modal Box Item Detail End -->
 
+    <script>
+      // Script untuk mengirim data konfirmasi kehadiran ke Google SpreadSheet
+      window.addEventListener("load", function () {
+        const form = document.getElementById("my-form");
+        form.addEventListener("submit", function (e) {
+          e.preventDefault();
+          const data = new FormData(form);
+          const action = e.target.action;
+          fetch(action, {
+            method: "POST",
+            body: data,
+          }).then(() => {
+            alert("Konfirmasi Kehadiran berhasil terkirim!");
+          });
+        });
+      });
+    </script>
     <!-- Feather Icons -->
     <script>
       feather.replace();
