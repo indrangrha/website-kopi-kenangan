@@ -36,6 +36,13 @@ document.addEventListener("alpine:init", () => {
         img: "5.jpg",
         price: 40000,
       },
+      {
+        id: 6,
+        name: "Java Halu",
+        desc: "Nikmati keaslian dan kelezatan Biji Kopi Java Halu, kopi premium yang dihasilkan dari perkebunan kopi terbaik di pulau Jawa. Dengan proses pemetikan yang selektif dan teknik pengolahan yang tradisional, biji kopi ini menghadirkan cita rasa yang khas dan aromatik.",
+        img: "6.jpg",
+        price: 50000,
+      },
     ],
   }));
 
